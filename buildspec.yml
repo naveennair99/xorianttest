@@ -14,5 +14,5 @@ phases:
 
   post_build:
     commands:
-      - docker run -it xorianttestapp:1.4 ./carta-devops test
+      - docker run xorianttestapp:1.4 ./carta-devops test
       - docker push naveen09/xorianttestapp:1.4
