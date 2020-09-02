@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+
+  pre_build:
+    commands:
+      - echo this is the login step
+      - docker login -u=naveen09 -p=Absolution999
+
+  build:
+    commands:
+      - docker build -t xorianttestapp:1.0 .
+      - docker tag xorianttestapp:1.0 naveen09/xorianttestapp:1.0
+
+  post_build:
+    commands:
+      - docker run -it naveen09/xorianttestapp:1.0
+      - docker push naveen09/xorianttestapp:1.0 
