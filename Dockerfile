@@ -1,10 +1,5 @@
-FROM python:3.8-alpine as base
-RUN pip install -r requirements.txt
+FROM cartahub/devops
 
 WORKDIR /carta/devops
-ENV PATH="/carta/devops:${PATH}"
 
-COPY . .
-RUN mv secret.txt /var/secret.txt
-
-CMD [ "carta-devops" ]
+CMD [ "/bin/sh" ,"carta-devops" ,"test" ]
