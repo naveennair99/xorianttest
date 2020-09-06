@@ -4,5 +4,3 @@ WORKDIR /carta/devops
 
 CMD ["python", "/carta/devops/app/web.py"]
 
-CMD [ "/bin/sh" ,"carta-devops" ,"test" ]
-
